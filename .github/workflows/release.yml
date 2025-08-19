@@ -18,11 +18,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "yarn" # cache para Yarn classic (1.x)
+          cache: "npm" # cache para Yarn classic (1.x)
 
-      - run: yarn install --frozen-lockfile || yarn install
-      - run: yarn build
-
+      - run: npm install --no-audit --no-fund
+      - run: npm run build
       # usamos npm apenas para empacotar (.tgz); não precisa de package-lock
       - run: npm pack --pack-destination .
 
