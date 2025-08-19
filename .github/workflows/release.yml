@@ -1,8 +1,13 @@
 name: release
+
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
+  workflow_dispatch: {} # permite rodar manualmente
+
+permissions:
+  contents: write # <— dá permissão para criar/editar Releases
 
 jobs:
   pack-and-release:
@@ -13,15 +18,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'yarn'
+          cache: "npm"
 
-      - run: yarn install --non-interactive
-      - run: yarn build
-      # usamos npm pack para um nome de arquivo previsível: <scope>-<name>-<version>.tgz
+      - run: npm ci --no-audit --no-fund
+      - run: npm run build
       - run: npm pack --pack-destination .
 
-      - name: Upload .tgz to GitHub Release
+      - name: Create/Upload GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: |
-            ./*.tgz
+          files: ./*.tgz
+          generate_release_notes: true
+          token: ${{ secrets.GITHUB_TOKEN }} # <— usa o token com contents:write
