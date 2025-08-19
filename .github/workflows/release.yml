@@ -1,0 +1,27 @@
+name: release
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  pack-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'yarn'
+
+      - run: yarn install --non-interactive
+      - run: yarn build
+      # usamos npm pack para um nome de arquivo previsível: <scope>-<name>-<version>.tgz
+      - run: npm pack --pack-destination .
+
+      - name: Upload .tgz to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            ./*.tgz
