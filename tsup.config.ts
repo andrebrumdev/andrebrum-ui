@@ -1,13 +1,16 @@
-import { defineConfig } from 'tsup';
+import { defineConfig } from "tsup";
 
 export default defineConfig({
-  entry: ['src/index.ts'],
+  entry: ["src/index.ts"],
   dts: true,
   sourcemap: true,
   clean: true,
-  format: ['esm', 'cjs'],
-  external: ['react', 'react-dom', 'tailwindcss'],
+  format: ["esm", "cjs"],
+  external: ["react", "react-dom", "tailwindcss"],
   esbuildOptions(options) {
-    options.jsx = 'automatic';
-  }
+    options.jsx = "automatic";
+  },
+  outExtension({ format }) {
+    return { js: format === "esm" ? ".mjs" : ".cjs" };
+  },
 });
