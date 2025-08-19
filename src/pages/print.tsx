@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
+import "./globals.css";
 export enum Direction {
   INBOUND = "Inbound", // bairro centro
   OUTBOUND = "Outbound", // centro bairro
