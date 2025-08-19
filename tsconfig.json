@@ -14,7 +14,21 @@
     "moduleResolution": "Bundler",
     "forceConsistentCasingInFileNames": true,
     "outDir": "dist",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@shared/*": [
+        "./src/shared/*"
+      ],
+      "@images/*": [
+        "./public/images/*"
+      ]
+    },
   },
   "include": [
     "src"

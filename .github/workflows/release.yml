@@ -4,10 +4,10 @@ on:
   push:
     tags:
       - "v*"
-  workflow_dispatch: {} # permite rodar manualmente
+  workflow_dispatch: {}
 
 permissions:
-  contents: write # <— dá permissão para criar/editar Releases
+  contents: write
 
 jobs:
   pack-and-release:
@@ -18,10 +18,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "npm"
+          cache: "yarn" # cache para Yarn classic (1.x)
 
-      - run: npm ci --no-audit --no-fund
-      - run: npm run build
+      - run: yarn install --frozen-lockfile || yarn install
+      - run: yarn build
+
+      # usamos npm apenas para empacotar (.tgz); não precisa de package-lock
       - run: npm pack --pack-destination .
 
       - name: Create/Upload GitHub Release
@@ -29,4 +31,4 @@ jobs:
         with:
           files: ./*.tgz
           generate_release_notes: true
-          token: ${{ secrets.GITHUB_TOKEN }} # <— usa o token com contents:write
+          token: ${{ secrets.GITHUB_TOKEN }}
