@@ -11,76 +11,99 @@ export enum Direction {
   INBOUND = "Inbound", // bairro centro
   OUTBOUND = "Outbound", // centro bairro
 }
-export const InfracaoPagePrint = ({
-  data,
-}: {
-  data: {
-    id: number;
-    createdAt: string;
-    updatedAt: string;
-    deletedAt: null;
-    date: string;
-    startTime: string;
-    endTime: string;
-    neighborhood: string;
-    location: string;
-    observation: string;
-    administrativeMeasure: string;
-    direction: Direction;
-    vehicle: {
-      id: number;
-      createdAt: string;
-      updatedAt: string;
-      deletedAt: null;
-      licensePlate: string;
-      chassis: string;
-      year: string;
-      numLine: string;
-      numOrder: string;
-      state: string;
-      mark: string;
-      model: string;
-      owner: string;
-      modal: {
-        id: number;
-        createdAt: string;
-        updatedAt: string;
-        deletedAt: null;
-        name: string;
-        description: null;
-        recurrent: boolean;
-        recurrenceRate: string;
-        value: string;
-        status: string;
-        code: string;
-      };
-    };
-    signature: {
-      id: number;
-      createdAt: string;
-      updatedAt: string;
-      deletedAt: null;
-      fileName: string;
-      originalName: string;
-      mimeType: string;
-      size: number;
-    };
-    user: {
-      id: number;
-      createdAt: string;
-      updatedAt: string;
-      deletedAt: null;
-      name: string;
-      email: string;
-      phoneNumber: string;
-      cpf: string;
-      rg: string;
-      birthdate: string;
-      profile: string;
-      address: null;
-    };
-  };
-}) => {
+
+interface Infracao {
+  id: number;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: any;
+  date: string;
+  startTime: string;
+  endTime: string;
+  neighborhood: string;
+  location: string;
+  observation: string;
+  administrativeMeasure: string;
+  direction: string;
+  status: string;
+  latitude: number;
+  longitude: number;
+  vehicle: Vehicle;
+  signature: Signature;
+  user: User;
+}
+
+interface Vehicle {
+  id: number;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: any;
+  licensePlate: string;
+  model: string;
+  renavam: any;
+  class: any;
+  chassisNumber: any;
+  chassisBrand: any;
+  chassisModel: any;
+  chassisYear: any;
+  bodyworkBrand: any;
+  bodyworkModel: any;
+  bodyworkYear: any;
+  federativeUnit: any;
+  status: string;
+  modal: Modal;
+}
+
+interface Modal {
+  id: number;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: any;
+  name: string;
+  description: string;
+  recurrent: boolean;
+  recurrenceRate: any;
+  value: any;
+  status: string;
+  code: string;
+}
+
+interface Signature {
+  id: number;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: any;
+  fileName: string;
+  originalName: string;
+  mimeType: string;
+  size: number;
+}
+
+interface User {
+  id: number;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: any;
+  name: string;
+  email: string;
+  phoneNumber: string;
+  cpf: string;
+  rg: any;
+  birthdate: any;
+  profile: string;
+  licensee: Licensee;
+  address: any;
+}
+
+interface Licensee {
+  id: number;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: any;
+  status: string;
+}
+
+export const InfracaoPagePrint = ({ data }: { data: Infracao }) => {
   return (
     <html>
       <head>
@@ -136,21 +159,21 @@ export const InfracaoPagePrint = ({
                         value={data?.vehicle?.modal?.name}
                         classNameWrapper="!col-span-full"
                       />
-                      <FieldReadonly
+                      {/* <FieldReadonly
                         label="Nº Ordem"
                         value={data?.vehicle?.numOrder}
-                      />
-                      <FieldReadonly
+                      /> */}
+                      {/* <FieldReadonly
                         label="Nº Linha"
                         value={data?.vehicle?.numLine}
-                      />
+                      /> */}
                       <FieldReadonly
                         label="Placa"
                         value={data?.vehicle?.licensePlate}
                       />
                       <FieldReadonly
                         label="Marca"
-                        value={data?.vehicle?.mark}
+                        value={data?.vehicle?.chassisBrand}
                       />
                       <FieldReadonly
                         label="Modelo"
@@ -158,7 +181,7 @@ export const InfracaoPagePrint = ({
                       />
                       <FieldReadonly
                         label="Proprietário"
-                        value={data?.vehicle?.owner}
+                        value={data?.user?.name}
                       />
                     </AccordionContent>
                   </AccordionItem>
@@ -218,7 +241,7 @@ export const InfracaoPagePrint = ({
                       Identificação da Infração
                     </div>
                     <AccordionContent className="grid grid-cols-12 gap-y-4 gap-x-2  *:col-span-4">
-                      <FieldReadonly
+                      {/* <FieldReadonly
                         label="Lei Nº"
                         value={data?.vehicle?.numLine}
                       />
@@ -234,7 +257,7 @@ export const InfracaoPagePrint = ({
                         label="Qtd. UFM"
                         value={data?.vehicle?.numLine}
                         classNameWrapper="!col-span-3"
-                      />
+                      /> */}
 
                       <div className="!col-span-9 flex flex-row gap-4 items-end *:inline-flex *:gap-1 *:items-center">
                         <span>Medida Adm.:</span>
@@ -269,11 +292,11 @@ export const InfracaoPagePrint = ({
                         (quinze) dias, a contar da data de ciência deste auto de
                         infração.
                       </p>
-                      <FieldReadonly
+                      {/* <FieldReadonly
                         label="Autuado"
                         value={data?.vehicle?.owner}
                         classNameWrapper="!col-span-full"
-                      />
+                      /> */}
                       <div className="space-y-2 flex flex-col gap-1 !col-span-full">
                         <div className="text-sm font-medium text-primary leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                           Assinatura do Autuado
