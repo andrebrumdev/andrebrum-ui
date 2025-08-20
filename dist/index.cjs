@@ -216,229 +216,303 @@ var Direction = /* @__PURE__ */ ((Direction2) => {
 var InfracaoPagePrint = ({
   data
 }) => {
-  return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("table", { className: "bg-white portrait-print ", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("thead", { className: "border-b border-[#757E80]", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("tr", { children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("th", { colSpan: 12, className: "text-left text-xl text-[#757E80] py-2", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "flex flex-row justify-between", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-        "img",
+  return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("html", { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("head", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("meta", { charSet: "UTF-8" }),
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }),
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("script", { src: "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("body", { children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("table", { className: "bg-white portrait-print ", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("thead", { className: "border-b border-[#757E80]", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("tr", { children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+        "th",
         {
-          src: "/images/logo-pdf.png",
-          alt: "logo SGTU",
-          className: "h-5"
-        }
-      ) }),
-      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "Auto de infra\xE7\xE3o" })
-    ] }) }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("tbody", { children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("tr", { children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
-      Accordion,
-      {
-        type: "multiple",
-        className: "space-y-4 py-4 px-0 ",
-        value: Array.from({ length: 6 }, (_, i) => `item-${i + 1}`),
-        children: [
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("h1", { className: "text-xl text-[#757E80]", children: [
-            "N\xBA do Auto: ",
-            data?.id?.toString()?.padStart(6, "0")
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(AccordionItem, { value: "item-1", className: "space-y-5  border-none", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "border rounded text-primary p-2.5 border-[#C6D4D7] bg-[#F4F7F7]", children: "Auto de Infra\xE7\xE3o" }),
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(AccordionContent, { className: "grid grid-cols-12 gap-y-4 gap-x-2 *:col-span-4", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                FieldReadonly,
-                {
-                  label: "Modal",
-                  value: data?.vehicle?.modal?.name,
-                  classNameWrapper: "!col-span-full"
-                }
-              ),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                FieldReadonly,
-                {
-                  label: "N\xBA Ordem",
-                  value: data?.vehicle?.numOrder
-                }
-              ),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                FieldReadonly,
-                {
-                  label: "N\xBA Linha",
-                  value: data?.vehicle?.numLine
-                }
-              ),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                FieldReadonly,
-                {
-                  label: "Placa",
-                  value: data?.vehicle?.licensePlate
-                }
-              ),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(FieldReadonly, { label: "Marca", value: data?.vehicle?.mark }),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(FieldReadonly, { label: "Modelo", value: data?.vehicle?.model }),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                FieldReadonly,
-                {
-                  label: "Propriet\xE1rio",
-                  value: data?.vehicle?.owner
-                }
-              )
-            ] })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(AccordionItem, { value: "item-2", className: "space-y-5 border-none", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "border rounded text-primary p-2.5 border-[#C6D4D7] bg-[#F4F7F7]", children: "Identifica\xE7\xE3o do Local da Infra\xE7\xE3o" }),
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(AccordionContent, { className: "grid grid-cols-12 gap-4 *:col-span-4", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                FieldReadonly,
-                {
-                  label: "Data",
-                  value: new Date(data?.date ?? "").toLocaleDateString()
-                }
-              ),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(FieldReadonly, { label: "Hora Inicial", value: data?.startTime }),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(FieldReadonly, { label: "Hora Final", value: data?.endTime }),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                FieldReadonly,
-                {
-                  label: "Local da Infra\xE7\xE3o",
-                  value: data?.location,
-                  classNameWrapper: "!col-span-6"
-                }
-              ),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                FieldReadonly,
-                {
-                  label: "Bairro",
-                  value: data?.neighborhood,
-                  classNameWrapper: "!col-span-6"
-                }
-              ),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "!col-span-full flex flex-row gap-4 *:inline-flex *:gap-1 *:items-center", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("span", { children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                    Checkbox,
-                    {
-                      checked: data?.direction === "Outbound" /* OUTBOUND */
-                    }
-                  ),
-                  "Bairro / Centro"
-                ] }),
-                /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("span", { children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                    Checkbox,
-                    {
-                      checked: data?.direction === "Inbound" /* INBOUND */
-                    }
-                  ),
-                  "Centro / Bairro"
-                ] })
-              ] })
-            ] })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(AccordionItem, { value: "item-3", className: "space-y-5 border-none", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "border rounded text-primary p-2.5 border-[#C6D4D7] bg-[#F4F7F7]", children: "Identifica\xE7\xE3o da Infra\xE7\xE3o" }),
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(AccordionContent, { className: "grid grid-cols-12 gap-y-4 gap-x-2  *:col-span-4", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                FieldReadonly,
-                {
-                  label: "Lei N\xBA",
-                  value: data?.vehicle?.numLine
-                }
-              ),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                FieldReadonly,
-                {
-                  label: "Artigo",
-                  value: data?.vehicle?.numLine
-                }
-              ),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                FieldReadonly,
-                {
-                  label: "Inciso",
-                  value: data?.vehicle?.numLine
-                }
-              ),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                FieldReadonly,
-                {
-                  label: "Qtd. UFM",
-                  value: data?.vehicle?.numLine,
-                  classNameWrapper: "!col-span-3"
-                }
-              ),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "!col-span-9 flex flex-row gap-4 items-end *:inline-flex *:gap-1 *:items-center", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "Medida Adm.:" }),
-                /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("span", { children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                    Checkbox,
-                    {
-                      checked: data?.direction === "Outbound" /* OUTBOUND */
-                    }
-                  ),
-                  "Apreens\xE3o"
-                ] }),
-                /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("span", { children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                    Checkbox,
-                    {
-                      checked: data?.direction === "Inbound" /* INBOUND */
-                    }
-                  ),
-                  "Reten\xE7\xE3o"
-                ] })
-              ] })
-            ] })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(AccordionItem, { value: "item-4", className: "space-y-5 border-none", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "border rounded text-primary p-2.5 border-[#C6D4D7] bg-[#F4F7F7]", children: "Ci\xEAncia e Prazo" }),
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(AccordionContent, { className: "grid grid-cols-12 gap-y-4 gap-x-2 *:col-span-4", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "!col-span-full text-primary", children: "Vossa Senhoria fica ciente de que, por for\xE7a da Lei acima mencionada lhe \xE9 facultada a possibilidade de interpola\xE7\xE3o de recurso administrativo, no prazo de 15 (quinze) dias, a contar da data de ci\xEAncia deste auto de infra\xE7\xE3o." }),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                FieldReadonly,
-                {
-                  label: "Autuado",
-                  value: data?.vehicle?.owner,
-                  classNameWrapper: "!col-span-full"
-                }
-              ),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "space-y-2 flex flex-col gap-1 !col-span-full", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "text-sm font-medium text-primary leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70", children: "Assinatura do Autuado" }),
-                /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "w-full border rounded-xl overflow-hidden h-40 bg-white", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                  "img",
-                  {
-                    className: "object-contain h-full w-full",
-                    src: data?.signature?.fileName,
-                    alt: data?.signature?.originalName
-                  }
-                ) })
-              ] })
-            ] })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(AccordionItem, { value: "item-5", className: "space-y-5 border-none", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "border rounded text-primary p-2.5 border-[#C6D4D7] bg-[#F4F7F7]", children: "Identifica\xE7\xE3o do Fiscal" }),
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(AccordionContent, { className: "grid grid-cols-12 gap-y-4 gap-x-2 *:col-span-6", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(FieldReadonly, { label: "Nome", value: data?.user?.name }),
-              /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                FieldReadonly,
-                {
-                  label: "Matr\xEDcula",
-                  value: data?.user?.id.toString().padStart(4, "0")
-                }
-              )
-            ] })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(AccordionItem, { value: "item-6", className: "space-y-5 border-none", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "border rounded text-primary p-2.5 border-[#C6D4D7] bg-[#F4F7F7]", children: "Observa\xE7\xF5es" }),
-            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(AccordionContent, { className: "grid grid-cols-12 gap-y-4 gap-x-2 *:col-span-full", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-              FieldReadonly,
+          colSpan: 12,
+          className: "text-left text-xl text-[#757E80] py-2",
+          children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "flex flex-row justify-between", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+              "img",
               {
-                label: "Observa\xE7\xF5es",
-                value: data?.observation,
-                as: Textarea
+                src: "/images/logo-pdf.png",
+                alt: "logo SGTU",
+                className: "h-5"
               }
-            ) })
+            ) }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "Auto de infra\xE7\xE3o" })
           ] })
-        ]
-      }
-    ) }) }) })
+        }
+      ) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("tbody", { children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("tr", { children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+        Accordion,
+        {
+          type: "multiple",
+          className: "space-y-4 py-4 px-0 ",
+          value: Array.from({ length: 6 }, (_, i) => `item-${i + 1}`),
+          children: [
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("h1", { className: "text-xl text-[#757E80]", children: [
+              "N\xBA do Auto: ",
+              data?.id?.toString()?.padStart(6, "0")
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+              AccordionItem,
+              {
+                value: "item-1",
+                className: "space-y-5  border-none",
+                children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "border rounded text-primary p-2.5 border-[#C6D4D7] bg-[#F4F7F7]", children: "Auto de Infra\xE7\xE3o" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(AccordionContent, { className: "grid grid-cols-12 gap-y-4 gap-x-2 *:col-span-4", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                      FieldReadonly,
+                      {
+                        label: "Modal",
+                        value: data?.vehicle?.modal?.name,
+                        classNameWrapper: "!col-span-full"
+                      }
+                    ),
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                      FieldReadonly,
+                      {
+                        label: "N\xBA Ordem",
+                        value: data?.vehicle?.numOrder
+                      }
+                    ),
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                      FieldReadonly,
+                      {
+                        label: "N\xBA Linha",
+                        value: data?.vehicle?.numLine
+                      }
+                    ),
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                      FieldReadonly,
+                      {
+                        label: "Placa",
+                        value: data?.vehicle?.licensePlate
+                      }
+                    ),
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                      FieldReadonly,
+                      {
+                        label: "Marca",
+                        value: data?.vehicle?.mark
+                      }
+                    ),
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                      FieldReadonly,
+                      {
+                        label: "Modelo",
+                        value: data?.vehicle?.model
+                      }
+                    ),
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                      FieldReadonly,
+                      {
+                        label: "Propriet\xE1rio",
+                        value: data?.vehicle?.owner
+                      }
+                    )
+                  ] })
+                ]
+              }
+            ),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+              AccordionItem,
+              {
+                value: "item-2",
+                className: "space-y-5 border-none",
+                children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "border rounded text-primary p-2.5 border-[#C6D4D7] bg-[#F4F7F7]", children: "Identifica\xE7\xE3o do Local da Infra\xE7\xE3o" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(AccordionContent, { className: "grid grid-cols-12 gap-4 *:col-span-4", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                      FieldReadonly,
+                      {
+                        label: "Data",
+                        value: new Date(data?.date ?? "").toLocaleDateString()
+                      }
+                    ),
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                      FieldReadonly,
+                      {
+                        label: "Hora Inicial",
+                        value: data?.startTime
+                      }
+                    ),
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(FieldReadonly, { label: "Hora Final", value: data?.endTime }),
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                      FieldReadonly,
+                      {
+                        label: "Local da Infra\xE7\xE3o",
+                        value: data?.location,
+                        classNameWrapper: "!col-span-6"
+                      }
+                    ),
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                      FieldReadonly,
+                      {
+                        label: "Bairro",
+                        value: data?.neighborhood,
+                        classNameWrapper: "!col-span-6"
+                      }
+                    ),
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "!col-span-full flex flex-row gap-4 *:inline-flex *:gap-1 *:items-center", children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("span", { children: [
+                        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                          Checkbox,
+                          {
+                            checked: data?.direction === "Outbound" /* OUTBOUND */
+                          }
+                        ),
+                        "Bairro / Centro"
+                      ] }),
+                      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("span", { children: [
+                        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                          Checkbox,
+                          {
+                            checked: data?.direction === "Inbound" /* INBOUND */
+                          }
+                        ),
+                        "Centro / Bairro"
+                      ] })
+                    ] })
+                  ] })
+                ]
+              }
+            ),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+              AccordionItem,
+              {
+                value: "item-3",
+                className: "space-y-5 border-none",
+                children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "border rounded text-primary p-2.5 border-[#C6D4D7] bg-[#F4F7F7]", children: "Identifica\xE7\xE3o da Infra\xE7\xE3o" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(AccordionContent, { className: "grid grid-cols-12 gap-y-4 gap-x-2  *:col-span-4", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                      FieldReadonly,
+                      {
+                        label: "Lei N\xBA",
+                        value: data?.vehicle?.numLine
+                      }
+                    ),
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                      FieldReadonly,
+                      {
+                        label: "Artigo",
+                        value: data?.vehicle?.numLine
+                      }
+                    ),
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                      FieldReadonly,
+                      {
+                        label: "Inciso",
+                        value: data?.vehicle?.numLine
+                      }
+                    ),
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                      FieldReadonly,
+                      {
+                        label: "Qtd. UFM",
+                        value: data?.vehicle?.numLine,
+                        classNameWrapper: "!col-span-3"
+                      }
+                    ),
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "!col-span-9 flex flex-row gap-4 items-end *:inline-flex *:gap-1 *:items-center", children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "Medida Adm.:" }),
+                      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("span", { children: [
+                        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                          Checkbox,
+                          {
+                            checked: data?.direction === "Outbound" /* OUTBOUND */
+                          }
+                        ),
+                        "Apreens\xE3o"
+                      ] }),
+                      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("span", { children: [
+                        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                          Checkbox,
+                          {
+                            checked: data?.direction === "Inbound" /* INBOUND */
+                          }
+                        ),
+                        "Reten\xE7\xE3o"
+                      ] })
+                    ] })
+                  ] })
+                ]
+              }
+            ),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+              AccordionItem,
+              {
+                value: "item-4",
+                className: "space-y-5 border-none",
+                children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "border rounded text-primary p-2.5 border-[#C6D4D7] bg-[#F4F7F7]", children: "Ci\xEAncia e Prazo" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(AccordionContent, { className: "grid grid-cols-12 gap-y-4 gap-x-2 *:col-span-4", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "!col-span-full text-primary", children: "Vossa Senhoria fica ciente de que, por for\xE7a da Lei acima mencionada lhe \xE9 facultada a possibilidade de interpola\xE7\xE3o de recurso administrativo, no prazo de 15 (quinze) dias, a contar da data de ci\xEAncia deste auto de infra\xE7\xE3o." }),
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                      FieldReadonly,
+                      {
+                        label: "Autuado",
+                        value: data?.vehicle?.owner,
+                        classNameWrapper: "!col-span-full"
+                      }
+                    ),
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "space-y-2 flex flex-col gap-1 !col-span-full", children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "text-sm font-medium text-primary leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70", children: "Assinatura do Autuado" }),
+                      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "w-full border rounded-xl overflow-hidden h-40 bg-white", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                        "img",
+                        {
+                          className: "object-contain h-full w-full",
+                          src: data?.signature?.fileName,
+                          alt: data?.signature?.originalName
+                        }
+                      ) })
+                    ] })
+                  ] })
+                ]
+              }
+            ),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+              AccordionItem,
+              {
+                value: "item-5",
+                className: "space-y-5 border-none",
+                children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "border rounded text-primary p-2.5 border-[#C6D4D7] bg-[#F4F7F7]", children: "Identifica\xE7\xE3o do Fiscal" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(AccordionContent, { className: "grid grid-cols-12 gap-y-4 gap-x-2 *:col-span-6", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(FieldReadonly, { label: "Nome", value: data?.user?.name }),
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                      FieldReadonly,
+                      {
+                        label: "Matr\xEDcula",
+                        value: data?.user?.id.toString().padStart(4, "0")
+                      }
+                    )
+                  ] })
+                ]
+              }
+            ),
+            /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+              AccordionItem,
+              {
+                value: "item-6",
+                className: "space-y-5 border-none",
+                children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "border rounded text-primary p-2.5 border-[#C6D4D7] bg-[#F4F7F7]", children: "Observa\xE7\xF5es" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(AccordionContent, { className: "grid grid-cols-12 gap-y-4 gap-x-2 *:col-span-full", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                    FieldReadonly,
+                    {
+                      label: "Observa\xE7\xF5es",
+                      value: data?.observation,
+                      as: Textarea
+                    }
+                  ) })
+                ]
+              }
+            )
+          ]
+        }
+      ) }) }) })
+    ] }) })
   ] });
 };
 // Annotate the CommonJS export names for ESM import in node:
