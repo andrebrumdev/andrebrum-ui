@@ -14,9 +14,9 @@ export enum Direction {
 
 interface Infracao {
   id: number;
-  createdAt: Date;
-  updatedAt: Date;
-  deletedAt: Date;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: any;
   date: string;
   startTime: string;
   endTime: string;
@@ -35,9 +35,9 @@ interface Infracao {
 
 interface Vehicle {
   id: number;
-  createdAt: Date;
-  updatedAt: Date;
-  deletedAt: Date;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: any;
   licensePlate: string;
   model: string;
   renavam: any;
@@ -56,9 +56,9 @@ interface Vehicle {
 
 interface Modal {
   id: number;
-  createdAt: Date;
-  updatedAt: Date;
-  deletedAt: Date;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: any;
   name: string;
   description: string;
   recurrent: boolean;
@@ -70,9 +70,9 @@ interface Modal {
 
 interface Signature {
   id: number;
-  createdAt: Date;
-  updatedAt: Date;
-  deletedAt: Date;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: any;
   fileName: string;
   originalName: string;
   mimeType: string;
@@ -81,9 +81,9 @@ interface Signature {
 
 interface User {
   id: number;
-  createdAt: Date;
-  updatedAt: Date;
-  deletedAt: Date;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: any;
   name: string;
   email: string;
   phoneNumber: string;
@@ -97,9 +97,9 @@ interface User {
 
 interface Licensee {
   id: number;
-  createdAt: Date;
-  updatedAt: Date;
-  deletedAt: Date;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: any;
   status: string;
 }
 
