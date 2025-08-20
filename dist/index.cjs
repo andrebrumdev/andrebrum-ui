@@ -213,9 +213,7 @@ var Direction = /* @__PURE__ */ ((Direction2) => {
   Direction2["OUTBOUND"] = "Outbound";
   return Direction2;
 })(Direction || {});
-var InfracaoPagePrint = ({
-  data
-}) => {
+var InfracaoPagePrint = ({ data }) => {
   return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("html", { children: [
     /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("head", { children: [
       /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("meta", { charSet: "UTF-8" }),
@@ -271,20 +269,6 @@ var InfracaoPagePrint = ({
                     /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
                       FieldReadonly,
                       {
-                        label: "N\xBA Ordem",
-                        value: data?.vehicle?.numOrder
-                      }
-                    ),
-                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                      FieldReadonly,
-                      {
-                        label: "N\xBA Linha",
-                        value: data?.vehicle?.numLine
-                      }
-                    ),
-                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                      FieldReadonly,
-                      {
                         label: "Placa",
                         value: data?.vehicle?.licensePlate
                       }
@@ -293,7 +277,7 @@ var InfracaoPagePrint = ({
                       FieldReadonly,
                       {
                         label: "Marca",
-                        value: data?.vehicle?.mark
+                        value: data?.vehicle?.chassisBrand
                       }
                     ),
                     /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
@@ -307,7 +291,7 @@ var InfracaoPagePrint = ({
                       FieldReadonly,
                       {
                         label: "Propriet\xE1rio",
-                        value: data?.vehicle?.owner
+                        value: data?.user?.name
                       }
                     )
                   ] })
@@ -384,58 +368,27 @@ var InfracaoPagePrint = ({
                 className: "space-y-5 border-none",
                 children: [
                   /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "border rounded text-primary p-2.5 border-[#C6D4D7] bg-[#F4F7F7]", children: "Identifica\xE7\xE3o da Infra\xE7\xE3o" }),
-                  /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(AccordionContent, { className: "grid grid-cols-12 gap-y-4 gap-x-2  *:col-span-4", children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                      FieldReadonly,
-                      {
-                        label: "Lei N\xBA",
-                        value: data?.vehicle?.numLine
-                      }
-                    ),
-                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                      FieldReadonly,
-                      {
-                        label: "Artigo",
-                        value: data?.vehicle?.numLine
-                      }
-                    ),
-                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                      FieldReadonly,
-                      {
-                        label: "Inciso",
-                        value: data?.vehicle?.numLine
-                      }
-                    ),
-                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                      FieldReadonly,
-                      {
-                        label: "Qtd. UFM",
-                        value: data?.vehicle?.numLine,
-                        classNameWrapper: "!col-span-3"
-                      }
-                    ),
-                    /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "!col-span-9 flex flex-row gap-4 items-end *:inline-flex *:gap-1 *:items-center", children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "Medida Adm.:" }),
-                      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("span", { children: [
-                        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                          Checkbox,
-                          {
-                            checked: data?.direction === "Outbound" /* OUTBOUND */
-                          }
-                        ),
-                        "Apreens\xE3o"
-                      ] }),
-                      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("span", { children: [
-                        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                          Checkbox,
-                          {
-                            checked: data?.direction === "Inbound" /* INBOUND */
-                          }
-                        ),
-                        "Reten\xE7\xE3o"
-                      ] })
+                  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(AccordionContent, { className: "grid grid-cols-12 gap-y-4 gap-x-2  *:col-span-4", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "!col-span-9 flex flex-row gap-4 items-end *:inline-flex *:gap-1 *:items-center", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { children: "Medida Adm.:" }),
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("span", { children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                        Checkbox,
+                        {
+                          checked: data?.direction === "Outbound" /* OUTBOUND */
+                        }
+                      ),
+                      "Apreens\xE3o"
+                    ] }),
+                    /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("span", { children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                        Checkbox,
+                        {
+                          checked: data?.direction === "Inbound" /* INBOUND */
+                        }
+                      ),
+                      "Reten\xE7\xE3o"
                     ] })
-                  ] })
+                  ] }) })
                 ]
               }
             ),
@@ -448,14 +401,6 @@ var InfracaoPagePrint = ({
                   /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "border rounded text-primary p-2.5 border-[#C6D4D7] bg-[#F4F7F7]", children: "Ci\xEAncia e Prazo" }),
                   /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(AccordionContent, { className: "grid grid-cols-12 gap-y-4 gap-x-2 *:col-span-4", children: [
                     /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { className: "!col-span-full text-primary", children: "Vossa Senhoria fica ciente de que, por for\xE7a da Lei acima mencionada lhe \xE9 facultada a possibilidade de interpola\xE7\xE3o de recurso administrativo, no prazo de 15 (quinze) dias, a contar da data de ci\xEAncia deste auto de infra\xE7\xE3o." }),
-                    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-                      FieldReadonly,
-                      {
-                        label: "Autuado",
-                        value: data?.vehicle?.owner,
-                        classNameWrapper: "!col-span-full"
-                      }
-                    ),
                     /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "space-y-2 flex flex-col gap-1 !col-span-full", children: [
                       /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "text-sm font-medium text-primary leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70", children: "Assinatura do Autuado" }),
                       /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "w-full border rounded-xl overflow-hidden h-40 bg-white", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(

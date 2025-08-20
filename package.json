@@ -1,6 +1,6 @@
 {
   "name": "@andrebrum01/ui",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "private": false,
   "type": "module",
   "main": "./dist/index.cjs",
